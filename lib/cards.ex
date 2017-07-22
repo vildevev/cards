@@ -24,4 +24,11 @@ defmodule Cards do
     Enum.member?(deck, card)
   end
 
+  def deal(deck, hand_size) do
+    # Whenever possible: delegate to built-in methods 
+    # List = linked-list, Tuple = Hash
+    # No index notation
+    Enum.split(deck, hand_size)
+  end
+
 end
