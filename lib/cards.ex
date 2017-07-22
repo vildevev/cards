@@ -1,18 +1,8 @@
 defmodule Cards do
-  @moduledoc """
-  Documentation for Cards.
-  """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Cards.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def create_deck do
+    # Double quotes is convention
+    ["Ace", "Two", "Three"]
   end
+
 end
