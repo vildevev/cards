@@ -38,4 +38,15 @@ defmodule Cards do
     File.write(filename, binary)
   end 
 
+  def load(filename) do
+    # Parentheses are optional when providing arguments
+    # Avoid if statements, use case statements instead
+    {status, binary} = File.read(filename)
+
+    case status do
+      :ok -> :erlang.binary_to_term binary
+      :error -> "That file does not exist"
+    end
+  end
+  
 end
