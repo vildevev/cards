@@ -6,8 +6,9 @@ defmodule Cards do
     suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
     # List comprehension:
     # Is a map function. Returns new array.
-    for suit <- suits do 
-      suit
+    # Can have multiple comprehensions running at the same time. 
+    for suit <- suits, value <- values do 
+      "#{value} of #{suit}"
     end
   end
 
