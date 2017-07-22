@@ -28,7 +28,14 @@ defmodule Cards do
     # Whenever possible: delegate to built-in methods 
     # List = linked-list, Tuple = Hash
     # No index notation
+    # Pattern matching: mirror structure and amount of elements, set equal to. 
     Enum.split(deck, hand_size)
   end
+
+  def save(deck, filename) do 
+    # Use Erlang to communicate with file system
+    binary = :erlang.term_to_binary(deck)
+    File.write(filename, binary)
+  end 
 
 end
