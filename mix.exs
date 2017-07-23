@@ -28,6 +28,9 @@ defmodule Cards.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    # Must add packages manually, as well as in command line by running "mix deps.get"
+    [
+      {:ex_doc, "~> 0.12"}
+    ]
   end
 end
