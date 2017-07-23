@@ -24,6 +24,17 @@ defmodule Cards do
     Enum.shuffle(deck)
   end
 
+  @doc """
+    Determines whether a deck contains a given card
+
+  ## Examples
+
+      iex> deck = Cards.create_deck
+      iex> Cards.contains?(deck, "Ace of Spades")
+      true
+      
+  """
+
   def contains?(deck, card) do
     # Question mark implies that the function return a boolean
     # Function isn't called on array as in OO Programming. Is instead a 'master' function that can take the object as one of the arguments.
@@ -39,7 +50,7 @@ defmodule Cards do
       iex> {hand, deck} = Cards.deal(deck, 1)
       iex> hand
       ["Ace of Spades"]
-      
+
   """
   def deal(deck, hand_size) do
     # Whenever possible: delegate to built-in methods 
