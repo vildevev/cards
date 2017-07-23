@@ -41,11 +41,11 @@ defmodule Cards do
   def load(filename) do
     # Parentheses are optional when providing arguments
     # Avoid if statements, use case statements instead
-    {status, binary} = File.read(filename)
-
-    case status do
-      :ok -> :erlang.binary_to_term binary
-      :error -> "That file does not exist"
+    # Prepend underscore to variables you don't want to use, but need for the sake of pattern matching.
+    # If left hand side is hard-coded, right side same spot value must match.
+    case File.read(filename) do
+      {:ok, binary} -> :erlang.binary_to_term binary
+      {:error, _reason} -> "That file does not exist"
     end
   end
   
